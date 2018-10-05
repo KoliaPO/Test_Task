@@ -1,0 +1,16 @@
+<root>
+ <intervals>
+   <interval>
+     <low> 1000 </low>
+     <high> 1050</high>
+   </interval>
+   <interval>
+      <low> 500</low>
+      <high> 888</high>
+    </interval>
+   <interval>
+      <low> 50</low>
+      <high> 88</high>
+    </interval>
+  </intervals>
+</root>

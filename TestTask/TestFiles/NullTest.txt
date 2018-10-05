@@ -1,0 +1,8 @@
+<root>
+ <intervals>
+   <interval>
+     <low> </low>
+     <high> </high>
+   </interval>
+  </intervals>
+</root>
