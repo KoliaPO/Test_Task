@@ -1,8 +1,7 @@
 #include "Writer.h"
 
-void Writer::writeFile(std::set<int> const &primesNum, std::mutex *mutex)
+void Writer::writeFile(std::set<int> const &primesNum)
 {
-	mutex->lock();
 	std::ofstream ofs;
 	ofs.open("primes.xml");
 	ofs << "<root>\n";
@@ -19,7 +18,5 @@ void Writer::writeFile(std::set<int> const &primesNum, std::mutex *mutex)
 	ofs << "</primes>\n";
 	ofs << "</root>\n";
 	ofs.close();
-	mutex->unlock();
 	std::cout << "\nFile has been created.\n";
-
 }

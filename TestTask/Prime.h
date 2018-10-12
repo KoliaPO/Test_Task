@@ -11,8 +11,9 @@ class Prime
 private:
 	std::set<int> primeNumbers;
 public:
-	void findPrimeNumbers(int low, int high, std::mutex &mutex);
+	void findPrimeNumbers(int const &low, int const &high, std::mutex &mutex);
 	int isPrime(int const &num);
+	void saveUniqueNumber(std::vector<int> const &vec);
 	const std::set<int> &getPrimeNumbers() const;
 
 	class LowHighException : public std::exception

@@ -4,12 +4,11 @@
 #include <iostream>
 #include <set>
 #include <fstream>
-#include <mutex>
 
 class Writer
 {
 public:
-	void writeFile(std::set<int> const &primesNum, std::mutex *mutex);
+	void writeFile(std::set<int> const &primesNum);
 };
 
 #endif
