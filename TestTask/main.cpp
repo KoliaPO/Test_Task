@@ -4,7 +4,7 @@
 #include "Reader.h"
 #include "Writer.h"
 
-std::thread createthread(Prime &p, int const &low, int const &high, std::mutex &mutex)
+std::thread createThread(Prime &p, int const &low, int const &high, std::mutex &mutex)
 {
 	std::thread th([&]() {
 		p.findPrimeNumbers(low, high, mutex);
@@ -28,19 +28,19 @@ int main()
 		reader.readFromFile(filename);
 		for (size_t i = 0; i < reader.getLowNum().size(); i++)
 		{
-			threads.push_back(createthread(prime, reader.getLowNum().at(i), reader.getHighNum().at(i), mutex));
+			threads.push_back(createThread(prime, reader.getLowNum().at(i), reader.getHighNum().at(i), mutex));
+		}
+
+		for (std::thread &thread : threads)
+		{
+			if (thread.joinable())
+				thread.join();
 		}
 		writer.writeFile(prime.getPrimeNumbers());
 	}
 	catch (std::exception &e)
 	{
 		std::cout << e.what() << std::endl;
-	}
-
-	for (std::thread &thread : threads)
-	{
-		if (thread.joinable())
-			thread.join();
 	}
 	system("pause");
  	return 0;

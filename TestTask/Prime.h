@@ -13,7 +13,6 @@ private:
 public:
 	void findPrimeNumbers(int const &low, int const &high, std::mutex &mutex);
 	int isPrime(int const &num);
-	void saveUniqueNumber(std::vector<int> const &vec);
 	const std::set<int> &getPrimeNumbers() const;
 
 	class LowHighException : public std::exception
