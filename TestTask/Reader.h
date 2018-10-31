@@ -1,7 +1,6 @@
 #ifndef READFILE_H
 #define READFILE_H
 
-#include <iostream>
 #include <string>
 #include <exception>
 #include <vector>
@@ -13,6 +12,7 @@ class Reader
 private:
 	std::vector<int> lowNum;
 	std::vector<int> highNum;
+
 public:
 	void readFromFile(std::string const &filename);
 	void findLow(std::string const &str);

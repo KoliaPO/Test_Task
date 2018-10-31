@@ -1,6 +1,6 @@
 #include "Prime.h"
 
-void Prime::findPrimeNumbers(int const &low, int const &high, std::mutex &mutex)
+void Prime::findPrimeNumbers(int const &low, int const &high)
 {
 	try
 	{
@@ -8,12 +8,11 @@ void Prime::findPrimeNumbers(int const &low, int const &high, std::mutex &mutex)
 			throw LowHighException();
 		for (int i = low; i <= high; i++)
 		{
-			//std::cout << "Thread id = " << std::this_thread::get_id() << "\n";
+			std::cout << "Thread id = " << std::this_thread::get_id() << "\n";
 			if (isPrime(i))
 			{
-				mutex.lock();
+				std::lock_guard<std::mutex> loc(mutex);
 				primeNumbers.insert(i);
-				mutex.unlock();
 			}
 		}
 	}

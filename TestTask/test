@@ -2,13 +2,13 @@
   <intervals>
     <interval>
       <low> 1000 </low>
-      <high> 1050</high>
+      <high> 1010</high>
     </interval>
     <interval>
-      <low> 1500 </low>
-      <high> 1550</high>
+      <low> 250 </low>
+      <high> 285</high>
    </interval>
-   <interval>
+  <interval>
       <low> 10 </low>
       <high> 50</high>
    </interval>
