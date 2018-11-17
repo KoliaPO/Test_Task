@@ -29,7 +29,7 @@ int main()
 		{
 			threads.push_back(createThread(prime, reader.getLowNum().at(i), reader.getHighNum().at(i)));
 		}
-		for (std::thread &thread : threads)
+		for (auto &thread : threads)
 		{
 			if (thread.joinable())
 				thread.join();
